@@ -3,6 +3,7 @@ import {
   NativeModules,
   requireNativeComponent,
   View,
+  ViewPropTypes,
   NativeEventEmitter,
 } from 'react-native';
 
@@ -45,7 +46,7 @@ export default class AdMobBanner extends React.Component {
 }
 
 AdMobBanner.propTypes = {
-  style: View.propTypes.style,
+  style: ViewPropTypes.style,
 
   /**
    * AdMob iOS library banner size constants
@@ -81,7 +82,7 @@ AdMobBanner.propTypes = {
   adViewWillDismissScreen: React.PropTypes.func,
   adViewDidDismissScreen: React.PropTypes.func,
   adViewWillLeaveApplication: React.PropTypes.func,
-  ...View.propTypes,
+  ...ViewPropTypes,
 };
 
 AdMobBanner.defaultProps = { bannerSize: 'smartBannerPortrait', didFailToReceiveAdWithError: () => {} };
